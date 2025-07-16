@@ -1,4 +1,4 @@
-package br.com.introduction;
+package br.com.study.introduction;
 
 // Inheritance,Composition,Encapsulation
 

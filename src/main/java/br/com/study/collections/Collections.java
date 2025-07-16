@@ -1,4 +1,4 @@
-package br.com.collections;
+package br.com.study.collections;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -9,10 +9,8 @@ import java.util.List;
 public class Collections {
     public static void main(String[] args) {
         List<Integer> listInt = new LinkedList<>();
-        listInt.add(5);
-        listInt.add(6);
-        listInt.addFirst(9);
-        listInt.removeLast();
+        ((LinkedList<Integer>) listInt).addFirst(9);
+        ((LinkedList<Integer>) listInt).removeLast();
         System.out.println(listInt);
 
         List<Integer> arrayInt = new ArrayList<>();
