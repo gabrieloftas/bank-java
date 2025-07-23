@@ -9,7 +9,8 @@ public class Cliente extends Pessoa {
 	private Date dataInit;
 	private Conta[] contas;
 	private int score;
-	private Enum<TipoCliente> tipoClienteEnum;
+	private TipoCliente tipoClienteEnum;
+	private boolean possibilidadeEmprestimo;
 
 
 	public Date getDataInit() {
@@ -36,11 +37,11 @@ public class Cliente extends Pessoa {
 		this.score = score;
 	}
 
-	public Enum<TipoCliente> getTipoClienteEnum() {
+	public TipoCliente getTipoClienteEnum() {
 		return tipoClienteEnum;
 	}
 
-	public void setTipoClienteEnum(Enum<TipoCliente> tipoClienteEnum) {
+	public void setTipoClienteEnum(TipoCliente tipoClienteEnum) {
 		this.tipoClienteEnum = tipoClienteEnum;
 	}
 }

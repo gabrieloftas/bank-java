@@ -6,7 +6,7 @@ public class Funcionario extends Pessoa {
 
 	//TODO criar mais atributos
 	private String matricula;
-	private Enum<Cargo> cargoEnum;
+	private Cargo cargoEnum;
 	private Double salario;
 	private Date dataDeAdmissao;
 
@@ -18,11 +18,11 @@ public class Funcionario extends Pessoa {
 		this.matricula = matricula;
 	}
 
-	public Enum<Cargo> getCargoEnum() {
+	public Cargo getCargoEnum() {
 		return cargoEnum;
 	}
 
-	public void setCargoEnum(Enum<Cargo> cargoEnum) {
+	public void setCargoEnum(Cargo cargoEnum) {
 		this.cargoEnum = cargoEnum;
 	}
 
