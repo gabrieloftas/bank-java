@@ -12,4 +12,9 @@ public class Poupanca extends Conta {
     public void setRendimento(BigDecimal rendimento) {
         this.rendimento = rendimento;
     }
+
+	@Override
+	public String tipoConta() {
+		return "CONTA POUPANÇA";
+	}
 }

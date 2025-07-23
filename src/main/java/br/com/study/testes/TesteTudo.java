@@ -1,25 +1,29 @@
 package br.com.study.testes;
 
-import br.com.bank.model.Pessoa;
+import br.com.bank.model.Agencia;
+import br.com.bank.repository.AgenciaDAO;
+import br.com.bank.repository.impl.AgenciaDAOImpl;
 
 public class TesteTudo {
 
 	public static void main(String[] args) {
-		TesteFinalStatic testes = new TesteFinalStatic();
+		AgenciaDAO dbAgencia = new AgenciaDAOImpl();
+		Agencia ag1 = new Agencia("12456", "LISBOA");
+		Agencia ag2 = new Agencia("12487", "FORTALEZA");
 		
-		testes.nome = "Antonio";
+		dbAgencia.createAgencia(ag1);
+		dbAgencia.createAgencia(ag2);
 		
-		TesteFinalStatic testes2 = new TesteFinalStatic();
-		
-		testes2.nome = "Gabriel";
-		
-		TesteFinalStatic.nome = "Serra";
-		
-		System.out.println(testes.nome);
-		System.out.println(testes2.nome);
+		/*dbAgencia.getAll().forEach(a -> {
+			System.out.println(a.getNumeroAgencia());
+		});*/
 		
 		
-		
+		AgenciaDAO dbAgencia2 = new AgenciaDAOImpl();
+		//TODO resolve isso
+		dbAgencia2.getAll().forEach(a -> {
+			System.out.println(a.getNumeroAgencia());
+		});
 	}
 	
 }
