@@ -44,4 +44,9 @@ public class Cliente extends Pessoa {
 	public void setTipoClienteEnum(TipoCliente tipoClienteEnum) {
 		this.tipoClienteEnum = tipoClienteEnum;
 	}
+
+	@Override
+	public String toString() {
+		return getNome();
+	}
 }
