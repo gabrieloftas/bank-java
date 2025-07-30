@@ -10,4 +10,9 @@ public class Corrente extends Conta{
     public void setEmprestimoAssociado(boolean emprestimoAssociado) {
         this.emprestimoAssociado = emprestimoAssociado;
     }
+
+	@Override
+	public String tipoConta() {
+		return "CONTA CORRENTE";
+	}
 }

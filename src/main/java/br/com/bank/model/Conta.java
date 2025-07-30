@@ -8,6 +8,8 @@ public abstract class Conta {
     private BigDecimal saldo;
     private String numeroAgencia;
     private String cpfGerenteAssociadoConta;
+    
+    public Conta(){}
 
     public String getCpfGerenteAssociadoConta() {
         return cpfGerenteAssociadoConta;
@@ -25,8 +27,6 @@ public abstract class Conta {
         return this.saldo;
     }
 
-    public Conta(){}
-
     public String getNumeroConta() {
         return NumeroConta;
     }
@@ -43,8 +43,6 @@ public abstract class Conta {
         this.cpfCliente = cpfCliente;
     }
 
-
-
     public String getNumeroAgencia() {
         return numeroAgencia;
     }
@@ -52,4 +50,7 @@ public abstract class Conta {
     public void setNumeroAgencia(String numeroAgencia) {
         this.numeroAgencia = numeroAgencia;
     }
+    
+    public abstract String tipoConta();
+    
 }
