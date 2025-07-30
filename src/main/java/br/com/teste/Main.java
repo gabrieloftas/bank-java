@@ -1,4 +1,7 @@
-package br.com.bank.model;
+package br.com.teste;
+
+import br.com.bank.model.Cliente;
+import br.com.bank.model.ClienteCRUD;
 
 public class Main {
     public static void main(String[] args) {
