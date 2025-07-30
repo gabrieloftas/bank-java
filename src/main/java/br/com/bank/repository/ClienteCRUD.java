@@ -1,4 +1,6 @@
-package br.com.bank.model;
+package br.com.bank.repository;
+
+import br.com.bank.model.Cliente;
 
 public class ClienteCRUD {
     private Cliente[] clientes = new Cliente[5];

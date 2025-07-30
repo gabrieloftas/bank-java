@@ -2,6 +2,7 @@ package br.com.bank.repository.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import br.com.bank.model.Agencia;
 import br.com.bank.repository.AgenciaDAO;
@@ -17,7 +18,19 @@ public class AgenciaDAOImpl implements AgenciaDAO {
 
 	@Override
 	public Agencia getAgencia(String numeroAgencia) {
-		// TODO Auto-generated method stub
+		/*
+		for (int i=0;i< dataBase.size();i++){
+			if (dataBase.get(i).getNumeroAgencia().equals(numeroAgencia)){
+				return dataBase.get(i);
+			}
+
+
+		}
+		*/
+		Optional<Agencia> result = this.dataBase.stream().filter(a -> a.getNumeroAgencia().equals(numeroAgencia)).findFirst();
+		if (result.isPresent()){
+			return result.get();
+		}
 		return null;
 	}
 
@@ -28,13 +41,25 @@ public class AgenciaDAOImpl implements AgenciaDAO {
 
 	@Override
 	public void updateAgencia(String numeroAgencia, Agencia agencia) {
-		// TODO Auto-generated method stub
-		
+		for (int i = 0; i < dataBase.size(); i++) {
+			if (dataBase.get(i).getNumeroAgencia().equals(numeroAgencia)) {
+				this.dataBase.set(i,agencia);
+				break;
+			}
+
+		}
 	}
 
 	@Override
 	public void deleteAgencia(String numeroAgencia) {
-		// TODO Auto-generated method stub
+		for (int i = 0; i < dataBase.size(); i++) {
+			if (dataBase.get(i).getNumeroAgencia().equals(numeroAgencia)) {
+				this.dataBase.remove(i);
+				break;
+
+			}
+
+		}
 		
 	}
 
