@@ -1,7 +1,6 @@
 package br.com.teste;
 
 import br.com.bank.model.Cliente;
-import br.com.bank.repository.ClienteCRUD;
 import br.com.bank.repository.ClienteDAO;
 import br.com.bank.repository.impl.ClienteDAOImpl;
 
