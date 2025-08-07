@@ -2,6 +2,8 @@ package br.com.teste;
 
 import br.com.bank.model.Cliente;
 import br.com.bank.repository.ClienteCRUD;
+import br.com.bank.repository.ClienteDAO;
+import br.com.bank.repository.impl.ClienteDAOImpl;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,13 +15,10 @@ public class Main {
         p2.setNome("Antonio");
         p3.setNome("Joana");
         p4.setNome("Anastacio");
-        ClienteCRUD crud = new ClienteCRUD();
-        crud.adicionarCliente(p1);
-        crud.mostrarClientes();
-        crud.adicionarCliente(p2);
-        crud.mostrarClientes();
-        crud.removeCliente(p1);
+        ClienteDAO crud = new ClienteDAOImpl();
+        crud.create(p1);
+        crud.create(p2);
+        crud.delete(p1.getCpf());
         //crud.atualizarClientes(p2,50);
-        crud.mostrarClientes();
     }
 }
