@@ -6,10 +6,10 @@ import br.com.bank.repository.ClienteDAO;
 import java.util.List;
 
 public class ClienteDAOImpl implements ClienteDAO {
-    private Cliente[] clientes = new Cliente[30];
+    private static Cliente[] clientes = new Cliente[30];
 
     @Override
-    public void createCliente(Cliente cliente) {
+    public void create(Cliente cliente) {
         try{
             for (int i = 0; i < clientes.length; i++) {
                 if (clientes[i] == null) {
@@ -24,23 +24,24 @@ public class ClienteDAOImpl implements ClienteDAO {
     }
 
     @Override
-    public Cliente getCliente(String cpf) {
+    public Cliente get(String cpf) {
         return null;
     }
 
     @Override
     public List<Cliente> getAll() {
+    	//TODO
         return List.of();
     }
 
     @Override
-    public void updateCliente(String cpf, Cliente cliente) {
-
+    public void update(String cpf, Cliente cliente) {
+    	//TODO
     }
 
     @Override
-    public void deleteCliente(String cpf) {
-
+    public void delete(String cpf) {
+    	//TODO
     }
 }
 

@@ -1,57 +1,40 @@
 package br.com.bank.repository.impl;
 
-import br.com.bank.model.Cliente;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import br.com.bank.model.Funcionario;
 import br.com.bank.repository.FuncionarioDAO;
 
-import java.util.HashMap;
-import java.util.List;
-
 public class FuncionarioDAOImpl implements FuncionarioDAO {
 
-    HashMap<Integer,Funcionario> hashMap = new HashMap<>();
+    private static Map<String,Funcionario> dataBase = new HashMap<>();
 
     @Override
-    public void createFuncionario(Funcionario funcionario) {
-
-        for (int i = 0; i < hashMap.size(); i++) {
-            if (!hashMap.containsKey(i)){
-                hashMap.put(i,funcionario);
-            }
-        }
+    public void create(Funcionario funcionario) {
+    	dataBase.put(funcionario.getMatricula(),funcionario); 
     }
 
     @Override
-    public Funcionario getFuncionario(String matricula) {
-        for (int i = 0; i < hashMap.size(); i++) {
-            if (hashMap.get(i).getMatricula().equals(matricula)){
-                return hashMap.get(i);
-            }
-        }
-        return null;
+    public Funcionario get(String matricula) {
+        return dataBase.get(matricula);
     }
 
     @Override
     public List<Funcionario> getAll() {
+    	//TODO
         return List.of();
     }
 
     @Override
-    public void updateFuncionario(String matricula, Funcionario funcionario) {
-        for (int i = 0; i < hashMap.size(); i++) {
-            if (hashMap.get(i).getMatricula().equals(matricula)){
-                hashMap.put(i,funcionario);
-                return;
-            }
-        }
+    public void update(String matricula, Funcionario funcionario) {
+    	//TODO tratamento caso nao exista
+        dataBase.put(matricula, funcionario);
     }
 
     @Override
-    public void deleteFuncionario(String matricula) {
-        for (int i = 0; i < hashMap.size(); i++) {
-            if (hashMap.get(i).getMatricula().equals(matricula)){
-                hashMap.remove(i);
-            }
-        }
+    public void delete(String matricula) {
+    	dataBase.remove(matricula);
     }
 }

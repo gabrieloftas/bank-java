@@ -12,8 +12,8 @@ public class TesteTudo {
 		Agencia ag1 = new Agencia("12456", "LISBOA");
 		Agencia ag2 = new Agencia("12487", "FORTALEZA");
 		
-		dbAgencia.createAgencia(ag1);
-		dbAgencia.createAgencia(ag2);
+		dbAgencia.create(ag1);
+		dbAgencia.create(ag2);
 		
 		/*dbAgencia.getAll().forEach(a -> {
 			System.out.println(a.getNumeroAgencia());
@@ -26,7 +26,7 @@ public class TesteTudo {
 		dbAgencia2.getAll().forEach(a -> {
 			System.out.println(a.getNumeroAgencia());
 		});
-		dbAgencia2.createAgencia(ag3);
+		dbAgencia2.create(ag3);
 		System.out.println("end object 2");
 		
 		System.out.println("start object 3");

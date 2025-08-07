@@ -12,19 +12,17 @@ public class AgenciaDAOImpl implements AgenciaDAO {
 	private static List<Agencia> dataBase = new ArrayList<>();
 	
 	@Override
-	public void createAgencia(Agencia agencia) {
+	public void create(Agencia agencia) {
 		dataBase.add(agencia);
 	}
 
 	@Override
-	public Agencia getAgencia(String numeroAgencia) {
+	public Agencia get(String numeroAgencia) {
 		/*
 		for (int i=0;i< dataBase.size();i++){
 			if (dataBase.get(i).getNumeroAgencia().equals(numeroAgencia)){
 				return dataBase.get(i);
 			}
-
-
 		}
 		*/
 		Optional<Agencia> result = this.dataBase.stream().filter(a -> a.getNumeroAgencia().equals(numeroAgencia)).findFirst();
@@ -40,7 +38,7 @@ public class AgenciaDAOImpl implements AgenciaDAO {
 	}
 
 	@Override
-	public void updateAgencia(String numeroAgencia, Agencia agencia) {
+	public void update(String numeroAgencia, Agencia agencia) {
 		for (int i = 0; i < dataBase.size(); i++) {
 			if (dataBase.get(i).getNumeroAgencia().equals(numeroAgencia)) {
 				this.dataBase.set(i,agencia);
@@ -51,7 +49,7 @@ public class AgenciaDAOImpl implements AgenciaDAO {
 	}
 
 	@Override
-	public void deleteAgencia(String numeroAgencia) {
+	public void delete(String numeroAgencia) {
 		for (int i = 0; i < dataBase.size(); i++) {
 			if (dataBase.get(i).getNumeroAgencia().equals(numeroAgencia)) {
 				this.dataBase.remove(i);
