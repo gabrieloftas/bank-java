@@ -9,7 +9,7 @@ import br.com.bank.repository.AgenciaDAO;
 
 public class AgenciaDAOImpl implements AgenciaDAO {
 
-	List<Agencia> dataBase = new ArrayList<>();
+	private static List<Agencia> dataBase = new ArrayList<>();
 	
 	@Override
 	public void createAgencia(Agencia agencia) {
