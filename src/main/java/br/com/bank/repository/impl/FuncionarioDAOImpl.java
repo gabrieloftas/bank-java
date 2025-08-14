@@ -1,5 +1,6 @@
 package br.com.bank.repository.impl;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,32 +10,31 @@ import br.com.bank.repository.FuncionarioDAO;
 
 public class FuncionarioDAOImpl implements FuncionarioDAO {
 
-    private static Map<String,Funcionario> dataBase = new HashMap<>();
+    private static final Map<String,Funcionario> DATABASE = new HashMap<>();
+
 
     @Override
-    public void create(Funcionario funcionario) {
-    	dataBase.put(funcionario.getMatricula(),funcionario); 
+    public void create(Funcionario typeClass) {
+        DATABASE.put(typeClass.getCpf(),typeClass);
     }
 
     @Override
-    public Funcionario get(String matricula) {
-        return dataBase.get(matricula);
+    public Funcionario get(String key) {
+        return DATABASE.get(key);
     }
 
     @Override
     public List<Funcionario> getAll() {
-    	//TODO
-        return List.of();
+        return new ArrayList<Funcionario>(DATABASE.values());
     }
 
     @Override
-    public void update(String matricula, Funcionario funcionario) {
-    	//TODO tratamento caso nao exista
-        dataBase.put(matricula, funcionario);
+    public void update(String key, Funcionario typeClass) {
+        DATABASE.put(key,typeClass);
     }
 
     @Override
-    public void delete(String matricula) {
-    	dataBase.remove(matricula);
+    public void delete(String key) {
+        DATABASE.remove(key);
     }
 }

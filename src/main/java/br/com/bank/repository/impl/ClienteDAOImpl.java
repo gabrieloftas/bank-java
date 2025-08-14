@@ -3,46 +3,51 @@ package br.com.bank.repository.impl;
 import br.com.bank.model.Cliente;
 import br.com.bank.repository.ClienteDAO;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ClienteDAOImpl implements ClienteDAO {
-    private static Cliente[] clientes = new Cliente[30];
+    private static final Cliente[] CLIENTES = new Cliente[30];
+
 
     @Override
-    public void create(Cliente cliente) {
-        try{
-            for (int i = 0; i < clientes.length; i++) {
-                if (clientes[i] == null) {
-                    this.clientes[i] = cliente;
-                    return;
-                }
+    public void create(Cliente typeClass) {
+        for (int i = 0; i < CLIENTES.length; i++) {
+            if (CLIENTES[i] == null) {
+                CLIENTES[i] = typeClass;
+                return;
             }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         }
-
     }
 
     @Override
-    public Cliente get(String cpf) {
-        return null;
+    public Cliente get(String key) {
+        //Duvida
+        for (int i = 0; i < CLIENTES.length; i++) {
+            if (CLIENTES[i].equals(Cliente));
+        }
     }
 
     @Override
     public List<Cliente> getAll() {
-    	//TODO
-        return List.of();
+        return new ArrayList<Cliente>(Arrays.stream(CLIENTES).toList());
     }
 
     @Override
-    public void update(String cpf, Cliente cliente) {
-    	//TODO
+    public void update(String key, Cliente typeClass) {
+        for (int i = 0;i < CLIENTES.length; i++){
+            if (CLIENTES[i].equals(typeClass)){
+                CLIENTES[i]=typeClass;
+            }
+        }
     }
 
     @Override
-    public void delete(String cpf) {
-    	//TODO
+    public void delete(String key) {
+        //Duvida
     }
 }
+
 
 
